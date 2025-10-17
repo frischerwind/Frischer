@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - FRISCHER WIND</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="FRISCHER WIND Logo" class="logo" />
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="pflegeberatung.html">Pflegeberatung</a>
+      <a href="about.html">Über uns</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Login</h1>
+
+    <form action="login_process.php" method="POST" onsubmit="return validateLoginForm()">
+      <input type="email" name="email" id="email" placeholder="E-Mail" required />
+      <input type="password" name="password" id="password" placeholder="Passwort" required />
+      <button type="submit">Anmelden</button>
+    </form>
+  </div>
+
+
+  <footer>
+    &copy; 2025 FRISCHER WIND | Design und Entwicklung von Mohammed Ahmed Sayed <br />
+    Email: <a href="mailto:mohammedahmedsayed@yahoo.com">mohammedahmedsayed@yahoo.com</a>
+    <br />
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </footer>
+
+  <script>
+    function validateLoginForm() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email) {
+        alert('Bitte geben Sie Ihre E-Mail-Adresse ein.');
+        return false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+        return false;
+      }
+
+      if (!password) {
+        alert('Bitte geben Sie Ihr Passwort ein.');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt - FRISCHER WIND</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- EmailJS SDK laden -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+      // EmailJS initialisieren mit deiner Benutzer-ID
+      emailjs.init('mKyUCW8WzrLExGcst'); // Ersetze dies mit deiner tatsächlichen Benutzer-ID
+
+      const btn = document.getElementById('button');
+
+      // وظيفة تحقق قبل إرسال النموذج
+      function validateForm(event) {
+        event.preventDefault(); // منع الإرسال التلقائي للنموذج
+        var name = document.getElementById("name").value;
+        var message = document.getElementById("message").value;
+
+        if (name && message) {
+          // إرسال البريد باستخدام EmailJS
+          var templateParams = {
+            name: name,
+            message: message
+          };
+
+          // إرسال البريد باستخدام EmailJS مع تحديد القالب
+          emailjs.send("frischerwind", "template_od0rlqt", templateParams)
+            .then(function(response) {
+              alert("Die Nachricht wurde erfolgreich gesendet!"); // إذا تم إرسال الرسالة بنجاح
+              // إعادة تعيين النموذج بعد إرسال الرسالة
+              document.getElementById("contact-form").reset(); // إعادة تعيين النموذج
+            }, function(error) {
+              console.log(error);  // عرض الخطأ في وحدة التحكم
+              alert("Es ist ein Fehler beim Senden der Nachricht aufgetreten. Bitte versuchen Sie es später erneut."); // في حالة حدوث خطأ
+            });
+        } else {
+          alert("Bitte achten Sie darauf, alle Felder auszufüllen.");
+        }
+      }
+  </script>
+
+  <style>
+    /* تخطيط الصفحة: جعل النموذج على اليسار والخريطة على اليمين */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap; /* لضمان عدم تصادم العناصر على الشاشات الصغيرة */
+    }
+
+    /* تصميم نموذج التواصل */
+    #contact-form {
+      flex: 1;
+      max-width: 45%;
+      margin-right: 20px;
+    }
+
+    /* تصميم خريطة الموقع */
+    .map-container {
+      flex: 1;
+      max-width: 45%;
+      height: 400px;
+      position: relative; /* لضبط الوضع */
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* تعيين بعض المسافات لتنسيق الصفحة */
+    .container h2 {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* تنسيق الروابط أسفل الخريطة */
+    .contact-links {
+      position: absolute;
+      bottom: 30px; /* زيادة المسافة بين الروابط وأسفل الخريطة */
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.7); /* خلفية شبه شفافة */
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 5px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #0073e6;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="FRISCHER WIND Logo" class="logo" />
+    <nav>
+      <a href="index.html">STARTSEITE</a>
+      <a href="about.html">ÜBER UNS</a>
+      <a href="galerie.html">GALERIE</a>
+      <a href="leistungen.html">LEISTUNGEN</a>
+      <a href="pflegeberatung.html">PFLEGEBERATUNG</a>
+      
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- نموذج التواصل -->
+    <div id="contact-form">
+      <h1>KONTAKT</h1>
+      <p>Schreiben Sie uns gerne eine Nachricht oder rufen Sie uns an.</p>
+
+      <h2>Schreiben Sie uns</h2>
+      <form onsubmit="validateForm(event)">
+        <input type="text" name="name" id="name" placeholder="Ihr Name" required />
+        <textarea name="message" id="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+        <button type="submit">Senden</button>
+      </form>
+
+      <h2>Oder rufen Sie uns an</h2>
+      <p><strong>Email:</strong> <a href="mailto:carolawegener@hotmail.de">carolawegener@hotmail.de</a></p>
+      <p><strong>Adresse:</strong> Ernst-Thälmann-Straße 22, 15344 Strausberg, Germany</p>
+      <p><strong>Telefon:</strong> <a href="tel:+4917645693877">0176 45693877</a> / <a href="tel:+4933413902536">03341 3902536</a></p>
+    </div>
+
+    <!-- خريطة الموقع -->
+    <div class="map-container">
+      <h2>Finden Sie uns auf der Karte</h2>
+
+      <!-- iframe يعرض الخريطة داخل الصفحة بدون فتح نافذة خارجية -->
+      <iframe
+        src="https://maps.google.com/maps?q=52.536051,13.847553&z=17&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="موقع مضمن - Google Maps">
+      </iframe>
+
+      <!-- روابط التواصل أسفل الخريطة في الجهة اليسرى -->
+      <div class="contact-links">
+        <p>Kontaktieren Sie uns auch über:</p>
+        <a href="mailto:carolawegener@hotmail.de">E-Mail</a> |
+        <a href="https://wa.me/4917645693877" target="_blank">WhatsApp</a> |
+        <a href="tel:+4917645693877">Telefon</a>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    &copy; 2025 FRISCHER WIND | Design und Entwicklung von Mohammed Ahmed Sayed <br />
+    Email: <a href="mailto:mohammedahmedsayed@yahoo.com">mohammedahmedsayed@yahoo.com</a>
+    <br />
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </footer>
+
+</body>
+</html>

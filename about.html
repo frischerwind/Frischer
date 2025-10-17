@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Über uns - FRISCHER WIND</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* تنسيق الصفحة الأساسي */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ecf0f1;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.9);
+      padding: 15px 20px;
+      color: #ecf0f1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      width: 100%;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+    }
+
+    nav {
+      font-size: 1.2em;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .container {
+      margin-top: 120px; /* لضمان أن النص لا يتداخل مع الهيدر الثابت */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .container h2 {
+      font-size: 2em;
+      margin-top: 30px;
+    }
+
+    .employee-slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+      margin-top: 40px;
+      overflow: hidden;
+      width: 80%;
+    }
+
+    .employee-slide {
+      display: none;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .employee-slide img {
+      width: 25%; /* قلل عرض الصور إلى الربع */
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .employee-info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .employee-info p {
+      color: #555;
+      font-weight: normal;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    /* استجابة الهواتف المحمولة والأجهزة الصغيرة */
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      nav {
+        margin-top: 10px;
+        font-size: 1.1em;
+      }
+
+      nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .container h1 {
+        font-size: 2em;
+      }
+
+      .container h2 {
+        font-size: 1.8em;
+      }
+
+      .employee-slideshow-container {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .prev, .next {
+        font-size: 16px;
+        padding: 12px;
+      }
+    }
+
+    /* استجابة للتابلت والأجهزة المتوسطة */
+    @media screen and (max-width: 1024px) {
+      .container h1 {
+        font-size: 2.2em;
+      }
+
+      .container h2 {
+        font-size: 1.9em;
+      }
+    }
+
+    /* الاستجابة للشاشات الكبيرة مثل أجهزة الكمبيوتر المكتبية */
+    @media screen and (min-width: 1025px) {
+      .container {
+        padding: 40px;
+      }
+
+      .employee-info {
+        font-size: 1.5em;
+      }
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="FRISCHER WIND Logo" class="logo" />
+    <nav>
+      <a href="index.html">STARTSEITE</a>
+      <a href="galerie.html">GALERIE</a>
+      <a href="leistungen.html">LEISTUNGEN</a>
+      <a href="pflegeberatung.html">PFLEGEBERATUNG</a>
+      <a href="kontakt.html">KONTAKT</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>ÜBER UNS</h1>
+
+    <h2>MEINE GESCHICHTE</h2>
+    <p><strong>ALLES HAT SEINE ZEIT - UND SEINE GESCHICHTE!</strong></p>
+
+    <ul>
+      <li><strong>1986:</strong> Ich habe schon früh damit angefangen und bin im Laufe der Jahre immer besser geworden.</li>
+      <li><strong>1995:</strong> Schon hier erkannte ich bereits, sich Zeit nehmen ist das Wichtigste.</li>
+      <li><strong>2003:</strong> Wurden die zusätzliche Betreuungsleistungen eingeführt. Hier war ich sehr froh, denn der Gesetzgeber hat zu diesem Zeitpunkt erkannt, dass Leistungskomplexe und Pflege allein nicht ausreichen. Endlich hatte man mehr Zeit in der Pflege.</li>
+      <li><strong>2016:</strong> Nachdem ich 30 Jahre in der Pflege gearbeitet habe, dabei ein Betreuungsangebot für Menschen mit eingeschränkter Alltagskompetenz geleitet hatte, wagte ich den Schritt in die Selbständigkeit. Denn nun inzwischen wurde mit der Neufassung des Verständnisses der Pflegebedürftigkeit ein tiefgreifender Perspektivwechsel vollzogen.</li>
+    </ul>
+
+    <h2>UNSERE MITARBEITER</h2>
+    <div class="employee-slideshow-container">
+      <!-- الشريحة 1 -->
+      <div class="employee-slide fade">
+        <img src="images/Carola Wegener .JPG" alt="Carola Wegener">
+        <div class="employee-info">
+          <h3>Carola Wegener</h3>
+          <p>Pflegeexpertin mit über 20 Jahren Erfahrung in der Betreuung von älteren Menschen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 2 -->
+      <div class="employee-slide fade">
+        <img src="images/Manuela Clemens .PNG" alt="Manuela Clemens">
+        <div class="employee-info">
+          <h3>Manuela Clemens</h3>
+          <p>Spezialisiert auf individuelle Pflege und emotionale Unterstützung der Klienten.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 3 -->
+      <div class="employee-slide fade">
+        <img src="images/Mohammed Ahmed Sayed Mohammed.PNG" alt="Mohammed Ahmed Sayed">
+        <div class="employee-info">
+          <h3>Mohammed Ahmed Sayed</h3>
+          <p>Mit mehr als 15 Jahren Erfahrung in der Gesundheitsberatung und Pflegebetreuung.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 4 -->
+      <div class="employee-slide fade">
+        <img src="images/Michele Gehrke .PNG" alt="Michele Gehrke">
+        <div class="employee-info">
+          <h3>Michele Gehrke</h3>
+          <p>Expertin für häusliche Pflege und Betreuung mit einem Fokus auf dem Wohlbefinden der Klienten.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 5 -->
+      <div class="employee-slide fade">
+        <img src="images/Adele Schulz .PNG" alt="Adele Schulz">
+        <div class="employee-info">
+          <h3>Adele Schulz</h3>
+          <p>Expertin für gerontologische Pflege und Rehabilitation von Senioren.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 6 -->
+      <div class="employee-slide fade">
+        <img src="images/Birgit Schaarschmidt .PNG" alt="Birgit Schaarschmidt">
+        <div class="employee-info">
+          <h3>Birgit Schaarschmidt</h3>
+          <p>Spezialisiert auf die Betreuung von Menschen mit Demenz und anderen kognitiven Erkrankungen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 7 -->
+      <div class="employee-slide fade">
+        <img src="images/Andreas Neumann .PNG" alt="Andreas Neumann">
+        <div class="employee-info">
+          <h3>Andreas Neumann</h3>
+          <p>Langjährige Erfahrung in der Pflege von Menschen mit körperlichen Einschränkungen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 8 -->
+      <div class="employee-slide fade">
+        <img src="images/Ines Hebbe .PNG" alt="Ines Hebbe">
+        <div class="employee-info">
+          <h3>Ines Hebbe</h3>
+          <p>Fokus auf individuelle Pflege und psychische Unterstützung für Klienten.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 9 -->
+      <div class="employee-slide fade">
+        <img src="images/Jennifer Walter .PNG" alt="Jennifer Walter">
+        <div class="employee-info">
+          <h3>Jennifer Walter</h3>
+          <p>Mit Erfahrung in der Betreuung von Senioren und Menschen mit besonderen Bedürfnissen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 10 -->
+      <div class="employee-slide fade">
+        <img src="images/Jenny Glinke .PNG" alt="Jenny Glinke">
+        <div class="employee-info">
+          <h3>Jenny Glinke</h3>
+          <p>Fokus auf Pflegeberatung und Unterstützung bei alltäglichen Herausforderungen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 11 -->
+      <div class="employee-slide fade">
+        <img src="images/Kerstin Seifert .PNG" alt="Kerstin Seifert">
+        <div class="employee-info">
+          <h3>Kerstin Seifert</h3>
+          <p>Spezialisiert auf soziale Arbeit und die Förderung des Wohlbefindens der Klienten.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 12 -->
+      <div class="employee-slide fade">
+        <img src="images/Anika Gettel .PNG" alt="Anika Gettel">
+        <div class="employee-info">
+          <h3>Anika Gettel</h3>
+          <p>Expertin für gesundheitliche Beratung und ganzheitliche Pflegeansätze.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 13 -->
+      <div class="employee-slide fade">
+        <img src="images/Sabine Edler .PNG" alt="Sabine Edler">
+        <div class="employee-info">
+          <h3>Sabine Edler</h3>
+          <p>Beratung und Pflege für Menschen mit besonderen sozialen und gesundheitlichen Bedürfnissen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 14 -->
+      <div class="employee-slide fade">
+        <img src="images/Susanne Schmidt .PNG" alt="Susanne Schmidt">
+        <div class="employee-info">
+          <h3>Susanne Schmidt</h3>
+          <p>Expertin für Pflegeplanung und Unterstützung von Familienangehörigen.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 15 -->
+      <div class="employee-slide fade">
+        <img src="images/Victoriya Nast .PNG" alt="Victoriya Nast ">
+        <div class="employee-info">
+          <h3>Victoriya Nast</h3>
+          <p>Betreuung von Senioren mit dem Fokus auf Lebensqualität und soziale Integration.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 16 -->
+      <div class="employee-slide fade">
+        <img src="images/Susanne Koberstein .PNG" alt="Susanne Koberstein">
+        <div class="employee-info">
+          <h3>Susanne Koberstein</h3>
+          <p>Pflegeexpertin mit umfassender Erfahrung in der häuslichen Pflege und Betreuung.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 17 -->
+      <div class="employee-slide fade">
+        <img src="images/Sabrina Jahn .PNG" alt="Sabrina Jahn">
+        <div class="employee-info">
+          <h3>Sabrina Jahn</h3>
+          <p>Spezialisiert auf Pflegeberatung und Gesundheitsförderung in der Seniorenpflege.</p>
+        </div>
+      </div>
+
+      <!-- الشريحة 18 -->
+      <div class="employee-slide fade">
+        <img src="images/Nicole Freckmann .PNG" alt="Nicole Friedmann">
+        <div class="employee-info">
+          <h3>Nicole Friedmann</h3>
+          <p>Expertin für ganzheitliche Betreuung und Beratung in der Pflege.</p>
+        </div>
+      </div>
+
+      <!-- إضافة أسهم للتنقل -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 FRISCHER WIND | Design und Entwicklung von Mohammed Ahmed Sayed <br />
+    Email: <a href="mailto:mohammedahmedsayed@yahoo.com">mohammedahmedsayed@yahoo.com</a>
+    <br />
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("employee-slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000); // تغيير الصورة كل 10 ثانية
+    }
+
+    function plusSlides(n) {
+      slideIndex += n;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      if (slideIndex < 1) { slideIndex = slides.length }
+      showSlides();
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>

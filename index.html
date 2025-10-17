@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FRISCHER WIND - Unterstützung im Alltag</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* إعدادات الصفحة */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #0c2c2b;
+      color: #333;
+    }
+
+    /* رأس الصفحة */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.9);
+      padding: 20px 30px;
+      color: #ecf0f1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+    }
+
+    nav {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* تصميم الخلفية الرئيسية */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/Frischer Wind.jpg') no-repeat center center;
+      background-size: contain; /* لتجنب الاقتصاص وضمان ظهور الصورة كاملة */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* تغيير المحاذاة للأعلى */
+      text-align: center;
+      color: white;
+      padding: 100px 20px 20px 20px; /* إضافة مسافة أكبر من الأعلى */
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero h1 {
+      font-size: 1.8em; /* تقليل حجم النص */
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero h2 {
+      font-size: 0.6em; /* تقليل حجم النص */
+      font-weight: bold;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 0.80em;
+      line-height: 1.6;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero .book-now {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #f39c12;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero .book-now:hover {
+      background-color: #e67e00;
+      transform: scale(1.1);
+    }
+
+    /* المربعات الحوارية للصفحات */
+    .info-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 30px;
+      background-color: #ffffff;
+      margin-top: -40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .info-box .box {
+      width: 30%;
+      padding: 30px;
+      background-color: #ecf0f1;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .info-box .box:hover {
+      transform: scale(1.05);
+    }
+
+    .info-box .box h3 {
+      font-size: 2em;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .info-box .box p {
+      font-size: 1.2em;
+      color: #7f8c8d;
+      line-height: 1.6;
+    }
+
+    .info-box .box a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #f39c12;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .info-box .box a:hover {
+      background-color: #7f8c8d;
+      transform: scale(1.1);
+    }
+
+    /* التذييل */
+    footer {
+      background-color: #2c3e50; /* اللون الجديد */
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+
+    footer a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #f39c12;
+    }
+
+    /* استجابة لعرض الشاشات */
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero h2 {
+        font-size: 1.8em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .info-box .box {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- الشعار -->
+    <img src="images/logo.png" alt="FRISCHER WIND Logo" class="logo" />
+    <nav>
+      
+     
+      <a href="about.html">ÜBER UNS</a>
+      <a href="galerie.html">GALERIE</a>
+      <a href="leistungen.html">LEISTUNGEN</a>
+      <a href="pflegeberatung.html">PFLEGEBERATUNG</a>
+      <a href="kontakt.html">KONTAKT</a>
+      </header>
+
+  <!-- الخلفية الكبيرة -->
+  <div class="hero">
+    <div>
+      <h1>FRISCHER WIND</h1>
+      <h2>ANGEBOTE ZUR UNTERSTÜTZUNG IM ALLTAG</h2>
+      
+      <a href="kontakt.html" class="book-now">Jetzt buchen</a>
+    </div>
+  </div>
+
+  <!-- المربعات الحوارية -->
+  <div class="info-box">
+    <div class="box">
+      <h3>Galerie</h3>
+      <p>Entdecken Sie unsere Galerie – eine visuelle Reise durch unser Angebot und die Unterstützung, die wir im Alltag bieten. Lassen Sie sich inspirieren von Bildern, die unsere Arbeit und Werte widerspiegeln.</p>
+      <a href="galerie.html">Mehr erfahren</a>
+    </div>
+    <div class="box">
+      <h3>Pflegeberatung</h3>
+      <p>Wir bieten Ihnen umfassende Beratung im Bereich der Pflege, damit Sie sich gut unterstützt fühlen und die richtige Entscheidung treffen können.</p>
+      <a href="pflegeberatung.html">Mehr erfahren</a>
+    </div>
+    <div class="box">
+      <h3>Über uns</h3>
+      <p>Erfahren Sie mehr über unser Projekt „Frischer Wind“ und unsere Philosophie, wie wir pflegebedürftigen Menschen und ihren Angehörigen helfen können.</p>
+      <a href="about.html">Mehr erfahren</a>
+    </div>
+    <div class="box">
+      <h3>Leistungen</h3>
+      <p>Unsere vielfältigen Angebote zur Unterstützung im Alltag helfen Pflegebedürftigen und ihren Angehörigen, den Alltag leichter zu bewältigen.</p>
+      <a href="leistungen.html">Mehr erfahren</a>
+    </div>
+    <div class="box">
+      <h3>Kontakt</h3>
+      <p>Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? Kontaktieren Sie uns und wir helfen Ihnen gerne weiter.</p>
+      <a href="kontakt.html">Mehr erfahren</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 FRISCHER WIND | Design und Entwicklung von Mohammed Ahmed Sayed <br />
+    Email: <a href="mailto:mohammedahmedsayed@yahoo.com">mohammedahmedsayed@yahoo.com</a>
+    <br />
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </footer>
+
+</body>
+</html>

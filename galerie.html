@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie - FRISCHER WIND</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ecf0f1;
+      color: #333;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.9);
+      padding: 20px 30px;
+      color: #ecf0f1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      width: 100%;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+    }
+
+    nav {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+
+    .hero h1 {
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 200;
+      color: #0c2c2b;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* عرض الشرائح */
+    .slideshow-container {
+      position: relative;
+      width: 30%; /* تم تصغير حجم عرض الشرائح بنسبة 50% */
+      margin: 0; /* إزالة أي مسافة */
+      padding: 0;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: opacity 1s ease-in-out;
+    }
+
+    /* التنقل بين الشرائح */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    /* تأثيرات الحركة */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+
+    footer a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #f39c12;
+    }
+
+    /* استجابة لعرض الشاشات */
+    @media screen and (max-width: 768px) {
+      .slideshow-container {
+        width: 60%; /* زيادة الحجم قليلاً في الأجهزة الصغيرة */
+      }
+    }
+
+    /* شاشة الموبايل */
+    @media screen and (max-width: 480px) {
+      .slideshow-container {
+        width: 80%; /* عرض الشرائح أكثر في شاشات الموبايل */
+      }
+
+      .prev, .next {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.png" alt="FRISCHER WIND Logo" class="logo" />
+    <nav>
+      <a href="index.html">STARTSEITE</a>
+      <a href="about.html">ÜBER UNS</a>
+      <a href="leistungen.html">LEISTUNGEN</a>
+      <a href="pflegeberatung.html">PFLEGEBERATUNG</a>
+      <a href="kontakt.html">KONTAKT</a>
+      
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>GALERIE</h1>
+      <p>Entdecken Sie unsere visuelle Galerie, die unser Engagement zeigt, Menschen im Alltag zu unterstützen. Jedes Bild erzählt eine Geschichte der Fürsorge und Unterstützung, die wir bieten.</p>
+    </div>
+  </div>
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="images/1.jpg" alt="Bild 1">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/2.jpg" alt="Bild 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/3.jpg" alt="Bild 3">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/4.jpg" alt="Bild 4">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/5.jpg" alt="Bild 5">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/6.jpg" alt="Bild 6">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/7.jpg" alt="Bild 7">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/8.jpg" alt="Bild 8">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/9.jpg" alt="Bild 9">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/10.jpg" alt="Bild 10">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/11.jpg" alt="Bild 11">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/12.jpg" alt="Bild 12">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 FRISCHER WIND | Design und Entwicklung von Mohammed Ahmed Sayed <br />
+    Email: <a href="mailto:mohammedahmedsayed@yahoo.com">mohammedahmedsayed@yahoo.com</a>
+    <br />
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 2000); // تغيير الصورة كل 10 ثانية
+    }
+  </script>
+</body>
+</html>
